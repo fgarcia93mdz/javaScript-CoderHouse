@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Juego de Adivinación</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    p {
+      margin-bottom: 10px;
+    }
+
+    input,
+    button {
+      padding: 10px;
+      font-size: 16px;
+      margin: 5px 0;
+    }
+
+    button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <h1>Juego de Adivinación</h1>
+    <p>Ingresa un número (esto no afectará el juego):</p>
+    <input id="numeroUsuario" type="number">
+    <button onclick="juegoAdivinador()">Comenzar Juego</button>
+    <p> Aprender a verificar si es un número par con algoritmo condicional: </p>
+    <input id="numeroVerificar" type="number">
+    <button onclick="esPar()">¿Es Par?</button>
+    <p> Aprender a verificar si un número es primo con el ciclo for: </p>
+    <input id="numeroPrimo" type="number"> 
+    <button onclick="esPrimo()">¿Es Primo?</button> 
+  </div>
+  <script src="./adivinador.js"></script>
+  <script src="./algoritmoCondicional.js"></script>
+  <script src="./algoritmoCiclo.js"></script>
+</body>
+
+
+</html>

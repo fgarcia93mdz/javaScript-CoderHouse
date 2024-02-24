@@ -1,0 +1,89 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+h1 {
+  color: #333;
+  font-size: 2.5em;
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  color: #666;
+  font-size: 1em;
+  text-align: center;
+  font-style: italic;
+}
+
+#formInforme {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+#formInforme label {
+  grid-column: span 2;
+  font-weight: bold;
+}
+
+#formInforme input[type="text"]:first-of-type {
+  margin-top: 0;
+}
+
+#formInforme label,
+#formInforme input,
+#formInforme textarea {
+  display: inline-block;
+}
+
+#formInforme input[type="text"], #formInforme textarea {
+  grid-column: span 2;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#formInforme input[type="button"] {
+  grid-column: span 2;
+  background-color: #5C6BC0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+#formInforme input[type="button"]:hover {
+  background-color: #3F51B5;
+}
+
+#contenedor-informes {
+  max-width: 500px;
+  margin: 50px auto 0;
+}
+
+#contenedor-informes .informe {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+#contenedor-informes .informe h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+#contenedor-informes .informe p {
+  margin: 5px 0;
+}
