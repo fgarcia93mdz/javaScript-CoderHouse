@@ -1,34 +1,31 @@
 var informes = [];
-var numeroInforme = 0;
-
-function Informe(titulo, sector, involucrado, autor, fecha, informe) {
-  this.titulo = titulo;
-  this.sector = sector;
-  this.involucrado = involucrado;
-  this.autor = autor;
-  this.fecha = fecha;
-  this.informe = informe;
-  this.numeroInforme = ++numeroInforme;
-}
-
 
 function agregarInforme() {
   var titulo = prompt('Ingrese el título del informe');
   var fechaActual = new Date();
   fechaActual.setHours(fechaActual.getHours() - 3);
-  var fechaAuto = fechaActual.toISOString().slice(0,16).replace('T', ' ');
+  var fechaAuto = fechaActual.toISOString().slice(0, 16).replace('T', ' ');
   var fecha = prompt('Ingrese la fecha y hora del informe', fechaAuto);
   var sector = prompt('Ingrese el sector del informe');
   var involucrado = prompt('Ingrese el nombre del involucrado');
   var autor = prompt('Ingrese el nombre del autor');
-  var informe = prompt('Ingrese el contenido del informe');
+  var informeContenido = prompt('Ingrese el contenido del informe');
 
-  if (!titulo || !sector || !involucrado || !autor || !fecha || !informe) {
+  if (!titulo || !sector || !involucrado || !autor || !fecha || !informeContenido) {
     alert('Todos los campos son obligatorios');
     return;
   }
 
-  var informe = new Informe(titulo, sector, involucrado, autor, fecha, informe);
+  var informe = {
+    titulo: titulo,
+    sector: sector,
+    involucrado: involucrado,
+    autor: autor,
+    fecha: fecha,
+    informe: informeContenido,
+    numeroInforme: informes.length + 1
+  };
+
   informes.push(informe);
 
   mostrarInformes();
@@ -44,8 +41,7 @@ function mostrarInformes() {
 
   contenedor.innerHTML = '';
 
-  for (var i = 0; i < informes.length; i++) {
-    var informe = informes[i];
+  informes.forEach(function (informe) {
     var elementoInforme = document.createElement('div');
     elementoInforme.className = 'informe';
 
@@ -78,12 +74,12 @@ function mostrarInformes() {
     elementoInforme.appendChild(contenidoInforme);
 
     contenedor.appendChild(elementoInforme);
-  }
+  });
 }
 
 function buscarInforme() {
   var titulo = prompt('Ingrese el título del informe que desea buscar');
-  var informeEncontrado = informes.find(function(informe) {
+  var informeEncontrado = informes.find(function (informe) {
     return informe.titulo === titulo;
   });
 
