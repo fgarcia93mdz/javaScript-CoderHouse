@@ -87,3 +87,116 @@ h2 {
 #contenedor-informes .informe p {
   margin: 5px 0;
 }
+
+#mensaje {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+}
+
+#mensaje.exito {
+  color: green;
+}
+
+#formInforme input[type="submit"] {
+  grid-column: span 2;
+  background-color: #5C6BC0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+#formInforme input[type="submit"]:hover {
+  background-color: #3F51B5;
+}
+
+#informeModal .modal-dialog {
+  max-width: 800px; 
+}
+
+#informeModal .modal-header {
+  background-color: #5C6BC0; 
+  color: white; 
+}
+
+#informeModal .modal-body {
+  font-size: 1.2em; 
+}
+
+#informeModal .modal-footer {
+  justify-content: center; 
+}
+
+#informeModal .btn-secondary {
+  background-color: #5C6BC0; 
+  color: white; 
+}
+
+#informeModal .btn-secondary:hover {
+  background-color: #3F51B5; 
+}
+
+#informeModal .btn-primary {
+  background-color: #5C6BC0; 
+  color: white; 
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: #5C6BC0;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+button {
+  background-color: #5C6BC0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+button:hover {
+  background-color: #3F51B5;
+}
+
+.navbar {
+  background-color: #5C6BC0;
+  margin-bottom: 20px;
+}
+
+.navbar a {
+  color: white;
+}
+
+.navbar a:hover {
+  color: #f4f4f4;
+}
+
+.navbar-toggler-icon {
+  color: white;
+}
