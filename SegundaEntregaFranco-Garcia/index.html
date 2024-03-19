@@ -3,36 +3,37 @@
 
 <head>
   <title>Gestión de Informes de Seguridad</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="../index.html">Gestión de Informes de Seguridad</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="../html/formulario.html">Formulario</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="../html/informes.html">Informes</a>
-        </li>
-      </ul>
-    </div>
   </nav>
-<h1>Gestión de Informes de Seguridad</h1>
-  <h2>Creación y gestión de informes para el área de CCTV del centro de monitoreo local de un casino</h2>
-  
+  <h1>Bienvenido al gestor de informes para el área de CCTV del centro de monitoreo local de un casino</h1>
+
+  <div id="login" class="centrado">
+    <form id="loginForm">
+      <label for="username">Nombre de usuario</label>
+      <input type="text" id="username" required>
+      <label for="password">Contraseña</label>
+      <input type="password" id="password" required>
+      <input type="submit" value="Iniciar sesión">
+    </form>
+  </div>
+
+  <div id="error-message" class="alert alert-danger" role="alert" style="display: none; margin: 5%; text-align: center;"></div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
- 
-  <script type="module" src="../js/formulario.js"></script>
-  <script type="module" src="../js/informes.js"></script>
+
+  <script type="module" src="./js/login.js"></script>
 </body>
+
 </html>

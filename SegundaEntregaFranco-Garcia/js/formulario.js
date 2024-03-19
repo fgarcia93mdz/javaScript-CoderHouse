@@ -4,7 +4,30 @@ import { InformeManager } from './informeManager.js';
 const ui = new UI();
 const informeManager = new InformeManager();
 
-window.onload = function () {
+window.onload = async function () {
+  const sectorSelect = document.getElementById('sector');
+  const involucradoSelect = document.getElementById('involucrado');
+
+  const responseSectores = await fetch('../json/sectores.json');
+  const sectores = await responseSectores.json();
+
+  const responseInvolucrados = await fetch('../json/involucrados.json');
+  const involucrados = await responseInvolucrados.json();
+
+  for (const sector of sectores) {
+    const option = document.createElement('option');
+    option.value = sector;
+    option.text = sector;
+    sectorSelect.add(option);
+  }
+
+  for (const involucrado of involucrados) {
+    const option = document.createElement('option');
+    option.value = involucrado;
+    option.text = involucrado;
+    involucradoSelect.add(option);
+  }
+  
   var fecha = document.getElementById('fecha');
   if (fecha) {
     var fechaActual = new Date();
