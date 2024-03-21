@@ -289,6 +289,11 @@ button:hover {
 
 }
 
+#thRol {
+  text-align: center;
+
+}
+
 #sectorTable {
   width: 100%;
   border-collapse: collapse;
@@ -297,4 +302,14 @@ button:hover {
   border-radius: 5px;
     border-color: #000000;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+#rolTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border-color: #000000;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
 }
