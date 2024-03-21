@@ -11,6 +11,23 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   document.getElementById('saludo').textContent = `¡Hola, ${user.nombre} ${user.apellido}, datos del usuario en storage!`;
 
+  const fechaActual = new Date();
+
+  function convertirFecha(fecha) {
+    const [parteFecha, parteHora] = fecha.split(', ');
+    const [dia, mes, ano] = parteFecha.split('/');
+    const [hora, minuto, segundo] = parteHora.split(':');
+    return new Date(ano, mes - 1, dia, hora, minuto, segundo);
+  }
+
+  const informesEsteMes = informeManager.obtenerInformes().filter(informe => {
+    const fechaInforme = convertirFecha(informe.fecha);
+    return fechaInforme.getMonth() === fechaActual.getMonth() &&
+           fechaInforme.getFullYear() === fechaActual.getFullYear();
+  });
+
+  const cantidadInformes = informesEsteMes.length;
+  document.getElementById('informesGenerados').textContent = `Informes generados este mes: ${cantidadInformes}`;
 });
 
 

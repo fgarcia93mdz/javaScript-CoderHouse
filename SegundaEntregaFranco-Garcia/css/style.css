@@ -1,14 +1,20 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   padding: 20px;
-  background-color: #adcff4;
+  background-image: linear-gradient(to right, #87c7ef, #8bccf5, rgb(189, 222, 243), #c7e5f6, #dfeff7);
 }
 
-h1 {
-  color: #333;
-  font-size: 1.5em;
+#h1Index {
+  color: #000000;
+  font-size: 1em;
   text-align: center;
   margin-bottom: 0.5em;
+  font-weight: bold;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 50px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  
 }
 
 h2 {
@@ -19,8 +25,8 @@ h2 {
 }
 
 #formInforme {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-direction: column;
   gap: 20px;
   max-width: 500px;
   margin: 0 auto;
@@ -31,29 +37,17 @@ h2 {
 }
 
 #formInforme label {
-  grid-column: span 2;
   font-weight: bold;
 }
 
-#formInforme input[type="text"]:first-of-type {
-  margin-top: 0;
-}
-
-#formInforme label,
-#formInforme input,
-#formInforme textarea {
-  display: inline-block;
-}
-
-#formInforme input[type="text"], #formInforme textarea {
-  grid-column: span 2;
+#formInforme .form-control,
+#formInforme .form-select {
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
 }
 
-#formInforme input[type="button"] {
-  grid-column: span 2;
+#formInforme .btn {
   background-color: #5C6BC0;
   color: white;
   border: none;
@@ -61,9 +55,10 @@ h2 {
   padding: 10px 20px;
   cursor: pointer;
   text-transform: uppercase;
+  align-self: center;
 }
 
-#formInforme input[type="button"]:hover {
+#formInforme .btn:hover {
   background-color: #3F51B5;
 }
 
@@ -229,9 +224,9 @@ button:hover {
 }
 
 #login {
-  background-color: rgb(216, 216, 216);
+  background-color: rgb(255, 255, 255);
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 15px;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
   width: 300px;
 }
@@ -312,4 +307,31 @@ button:hover {
   border-radius: 5px;
   border-color: #000000;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+#informesGenerados {
+  font-size: 20px; 
+  font-weight: bold; 
+  color: #5C6BC0; 
+  text-align: center; 
+  margin-top: 20px; 
+  padding: 10px; 
+  border: 2px solid #5C6BC0; 
+  border-radius: 5px; 
+  background-color: #f2f2f2; 
+  width: 50%;
+  margin-left: 25%;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+#togglePassword {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border: none;
+  background: none;
+  color: #000;
 }

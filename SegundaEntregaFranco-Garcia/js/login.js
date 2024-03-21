@@ -16,7 +16,16 @@ function login(username, password) {
     .then(data => {
       localStorage.setItem('Usuario', JSON.stringify(data.user));
       if (data.message === '200') {
-        window.location.href = '../html/informes.html'; 
+        Swal.fire({
+          icon: 'success',
+          title: `¡Bienvenido ${data.user.nombre}!`,
+          timer: 1000,
+          timerProgressBar: true,
+        }).then((result) => {
+          if (result.dismiss === Swal.DismissReason.timer) {
+            window.location.href = '../html/informes.html';
+          }
+        });
       }
     })
     .catch(error => {
@@ -33,4 +42,21 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
   const username = document.getElementById('username').value;
   const password = document.getElementById('password').value;
   login(username, password);
+});
+
+const togglePassword = document.querySelector('#togglePassword');
+const password = document.querySelector('#password');
+const eyeIcon = togglePassword.querySelector('i'); 
+
+togglePassword.addEventListener('click', function (e) {
+  const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+  password.setAttribute('type', type);
+  
+  if (password.getAttribute('type') === 'password') {
+    eyeIcon.classList.remove('fa-eye');
+    eyeIcon.classList.add('fa-eye-slash');
+  } else {
+    eyeIcon.classList.remove('fa-eye-slash');
+    eyeIcon.classList.add('fa-eye');
+  }
 });

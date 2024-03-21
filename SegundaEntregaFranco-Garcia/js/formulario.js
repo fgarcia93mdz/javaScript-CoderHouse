@@ -78,9 +78,13 @@ window.onload = async function () {
 
       informeManager.agregarInforme(informe);
       
-      alert('Informe agregado con éxito');
-
-      location.reload();
+      Swal.fire({
+        icon: 'success',
+        title: '¡Éxito!',
+        text: 'Informe agregado con éxito',
+      }).then(() => {
+        location.reload();
+      });
     });
   }
 

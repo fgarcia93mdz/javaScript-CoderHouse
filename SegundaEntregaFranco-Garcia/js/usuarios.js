@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 });
 
-function obtenerYRenderizarUsuarios() {
+function obtenerUsuarios() {
   fetch('http://localhost:8080/api/users/curso-js-usuario/usuarios')
     .then(response => response.json())
     .then(data => {
@@ -95,12 +95,18 @@ function editarUsuario(id, nuevoNombre, nuevoApellido, nuevoUsuario, nuevoEmail,
     })
     .then(data => {
       console.log(data);
-      obtenerYRenderizarUsuarios();
+      Swal.fire({
+        icon: 'success',
+        title: '¡Éxito!',
+        text: `¡Usuario ${data.usuario} editado con éxito!`,
+      }).then(() => {
+        obtenerUsuarios();
+      });
     })
     .catch(error => console.error('Error:', error));
 }
 
-obtenerYRenderizarUsuarios();
+obtenerUsuarios();
 
 function crearUsuario(nombre, apellido, usuario, email, password, rol) {
   fetch('http://localhost:8080/api/users/curso-js-usuario/crear', {
@@ -112,8 +118,13 @@ function crearUsuario(nombre, apellido, usuario, email, password, rol) {
   })
     .then(response => response.json())
     .then(data => {
-      console.log('Usuario creado:', data);
-       window.location.href = '../html/usuarios.html';
+      Swal.fire({
+        icon: 'success',
+        title: '¡Éxito!',
+        text: 'Usuario creado con éxito',
+      }).then(() => {
+        window.location.href = '../html/usuarios.html';
+      });
     })
     .catch(error => console.error('Error:', error));
 }
@@ -152,7 +163,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
   }
 
-  obtenerYRenderizarUsuarios();
+  obtenerUsuarios();
   obtenerYRenderizarRolesParaEditar();
 });
 

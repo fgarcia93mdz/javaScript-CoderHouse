@@ -1,4 +1,4 @@
-function obtenerYRenderizarSectores() {
+function obtenerSectores() {
   fetch('http://localhost:8080/api/sectors/curso-js-sector/sectores')
     .then(response => response.json())
     .then(data => {
@@ -46,8 +46,17 @@ function crearSector(sector) {
   })
     .then(response => response.json())
     .then(data => {
-      console.log('Sector creado:', data);
-      obtenerYRenderizarSectores();
+      Swal.fire({
+        icon: 'success',
+        title: '¡Éxito!',
+        text: 'Sector agregado con éxito',
+        timer: 2000,
+        timerProgressBar: true,
+      }).then((result) => {
+        if (result.dismiss === Swal.DismissReason.timer) {
+          obtenerSectores();
+        }
+      });
     })
     .catch(error => console.error('Error:', error));
 }
@@ -67,12 +76,21 @@ function editarSector(id, nuevoNombre) {
       return response.json();
     })
     .then(data => {
-      console.log(data);
-      obtenerYRenderizarSectores(); 
+      Swal.fire({
+        icon: 'success',
+        title: '¡Éxito!',
+        text: 'Sector editado exitosamente',
+        timer: 2000,
+        timerProgressBar: true,
+      }).then((result) => {
+        if (result.dismiss === Swal.DismissReason.timer) {
+          obtenerSectores(); 
+        }
+      });
     })
     .catch(error => console.error('Error:', error));
 }
-obtenerYRenderizarSectores();
+obtenerSectores();
 
 document.getElementById('sectorForm').addEventListener('submit', function (event) {
   event.preventDefault();

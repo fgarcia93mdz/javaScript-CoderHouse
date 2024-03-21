@@ -1,4 +1,4 @@
-function obtenerYRenderizarRolesParaEditar() {
+function obtenerRoles() {
   fetch('http://localhost:8080/api/users/curso-js-rol/roles')
     .then(response => response.json())
     .then(data => {
@@ -39,9 +39,87 @@ function obtenerYRenderizarRolesParaEditar() {
 }
 
 document.addEventListener('DOMContentLoaded', (event) => {
-  obtenerYRenderizarRolesParaEditar();
+  obtenerRoles();
   const cargarRolesButton = document.getElementById('cargarRoles');
   if (cargarRolesButton) {
-    cargarRolesButton.addEventListener('click', obtenerYRenderizarRolesParaEditar);
+    cargarRolesButton.addEventListener('click', obtenerRoles);
+  }
+});
+
+function crearRol(rol) {
+  console.log("🚀 ~ crearRol ~ rol:", rol)
+  fetch('http://localhost:8080/api/users/curso-js-rol/crear', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ nombre: rol }),
+  })
+    .then(response => response.json())
+    .then(data => {
+      Swal.fire({
+        icon: 'success',
+        title: '¡Éxito!',
+        text: 'Rol agregado con éxito',
+        timer: 2000,
+        timerProgressBar: true,
+      }).then((result) => {
+        if (result.dismiss === Swal.DismissReason.timer) {
+          obtenerRoles();
+        }
+      });
+    })
+    .catch(error => console.error('Error:', error));
+}
+
+function editarRol(id, nuevoNombre) {
+  fetch(`http://localhost:8080/api/users/curso-js-rol/editar/${id}`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ nombre: nuevoNombre }),
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(data => {
+      Swal.fire({
+        icon: 'success',
+        title: '¡Éxito!',
+        text: `¡Rol ${data.rol} editado con éxito!`,
+      }).then(() => {
+        obtenerRoles();
+      });
+    })
+    .catch(error => console.error('Error:', error));
+}
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  document.getElementById('rolForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+    const rol = document.getElementById('rol').value;
+    crearRol(rol);
+    document.getElementById('rol').value = '';
+  });
+
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const editForm = document.getElementById('editForm');
+  if (editForm) {
+    editForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      const nuevoNombre = document.getElementById('editInput').value;
+      if (nuevoNombre) {
+        editarRol(rol.id, nuevoNombre);
+      }
+    });
+  } else {
+    console.log("El formulario de edición no se encontró en la página.");
   }
 });
