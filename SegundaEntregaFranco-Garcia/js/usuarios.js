@@ -102,13 +102,6 @@ function editarUsuario(id, nuevoNombre, nuevoApellido, nuevoUsuario, nuevoEmail,
 
 obtenerYRenderizarUsuarios();
 
-// document.getElementById('userForm').addEventListener('submit', function (event) {
-//   event.preventDefault();
-
-//   const usuario = document.getElementById('usuario').value;
-//   crearUsuario(usuario);
-// });
-
 function crearUsuario(nombre, apellido, usuario, email, password, rol) {
   fetch('http://localhost:8080/api/users/curso-js-usuario/crear', {
     method: 'POST',
@@ -131,7 +124,6 @@ function obtenerYRenderizarRolesParaEditar() {
     .then(data => {
       const rolSelector = document.getElementById('editRol');
       if (rolSelector) {
-        // Primero, limpiamos las opciones existentes
         rolSelector.innerHTML = '';
         data.forEach(rol => {
           const option = document.createElement('option');
