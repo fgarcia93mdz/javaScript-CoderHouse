@@ -47,7 +47,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 function crearRol(rol) {
-  console.log("🚀 ~ crearRol ~ rol:", rol)
   fetch('http://localhost:8080/api/users/curso-js-rol/crear', {
     method: 'POST',
     headers: {

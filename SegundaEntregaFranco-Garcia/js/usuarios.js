@@ -94,7 +94,6 @@ function editarUsuario(id, nuevoNombre, nuevoApellido, nuevoUsuario, nuevoEmail,
       return response.json();
     })
     .then(data => {
-      console.log(data);
       Swal.fire({
         icon: 'success',
         title: '¡Éxito!',
