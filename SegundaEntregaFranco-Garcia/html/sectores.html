@@ -5,6 +5,7 @@
   <title>Gestión de Informes de Seguridad</title>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 </head>
 
 <body>
@@ -37,34 +38,50 @@
     </div>
   </nav>
 
-  <h1>Listado de informes</h1>
-  <div>
-    <button id="borrarStorage">Borrar almacenamiento (storage)</button>
-    <button id="descargarInformes">Descargar Informes (JSON)</button>
+  <h1>Listado de sectores</h1>
+  <div style="display: flex; justify-content: center; margin-top: 20px;">
+    <form id="sectorForm"
+      style="border: 1px solid #000; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); padding: 20px; text-align: center;">
+      <label for="sector">Nombre del sector:</label>
+      <input type="text" id="sector" name="sector" required>
+      <button type="submit">Crear sector</button>
+    </form>
   </div>
-  <div id="contenedor-informes"></div>
-  <div class="modal" tabindex="-1" id="informeModal">
+  <table id="sectorTable" class="table">
+    <thead>
+      <tr>
+        <th id="thSector">Nombre del sector</th>
+        <th id="thSector">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+
+  <div class="modal" tabindex="-1" id="editModal">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Detalles del Informe</h5>
+          <h5 class="modal-title">Editar sector</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body" id="informeModalBody">
+        <div class="modal-body">
+          <input type="text" id="editInput" class="form-control">
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" id="saveButton">Guardar</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
         </div>
       </div>
     </div>
   </div>
 
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-
-  <script type="module" src="../js/informes.js"></script>
+  <script type="module" src="../js/sectores.js"></script>
   <script type="module" src="../js/logOut.js"></script>
 
 </body>

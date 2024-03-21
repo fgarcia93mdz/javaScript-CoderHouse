@@ -1,6 +1,12 @@
 import { UI } from './ui.js';
 import { InformeManager } from './informeManager.js';
 
+async function obtenerSectores() {
+  const response = await fetch('http://localhost:8080/api/sectors/curso-js-sector/sectores');
+  const data = await response.json();
+  return data;
+}
+
 const ui = new UI();
 const informeManager = new InformeManager();
 
@@ -8,16 +14,15 @@ window.onload = async function () {
   const sectorSelect = document.getElementById('sector');
   const involucradoSelect = document.getElementById('involucrado');
 
-  const responseSectores = await fetch('../json/sectores.json');
-  const sectores = await responseSectores.json();
+  const sectores = await obtenerSectores();
 
   const responseInvolucrados = await fetch('../json/involucrados.json');
   const involucrados = await responseInvolucrados.json();
 
   for (const sector of sectores) {
     const option = document.createElement('option');
-    option.value = sector;
-    option.text = sector;
+    option.value = sector.sector;
+    option.text = sector.sector;
     sectorSelect.add(option);
   }
 
@@ -87,3 +92,17 @@ window.onload = async function () {
     });
   }
 };
+
+document.addEventListener('DOMContentLoaded', (event) => {
+  let user = JSON.parse(localStorage.getItem('Usuario'));
+
+  document.getElementById('saludo').textContent = `¡Hola, ${user.nombre} ${user.apellido}, datos del usuario en storage!`;
+
+   const autorElement = document.getElementById('autor');
+   if (autorElement) {
+     autorElement.value = `${user.usuario}`;
+   } else {
+    console.error('El elemento con el ID "autor" no existe en la página.');
+   }
+
+});

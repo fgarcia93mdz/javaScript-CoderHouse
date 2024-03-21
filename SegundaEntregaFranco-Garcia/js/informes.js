@@ -9,16 +9,11 @@ ui.mostrarInformes(informeManager.obtenerInformes());
 document.addEventListener('DOMContentLoaded', (event) => {
   let user = JSON.parse(localStorage.getItem('Usuario'));
 
-  document.getElementById('saludo').textContent = `¡Hola, ${user.nombre} ${user.apellido}, tus datos están en el storage!`;
-
-  document.getElementById('autor').value = `${user.usuario}`;
+  document.getElementById('saludo').textContent = `¡Hola, ${user.nombre} ${user.apellido}, datos del usuario en storage!`;
 
 });
 
-document.getElementById('logout').addEventListener('click', function () {
-  localStorage.removeItem('Usuario');
-  window.location.href = '/';
-});
+
 var descargarInformes = document.getElementById('descargarInformes');
 if (descargarInformes) {
   descargarInformes.addEventListener('click', function () {

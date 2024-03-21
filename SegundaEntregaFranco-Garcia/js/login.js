@@ -1,6 +1,6 @@
 function login(username, password) {
   
-  fetch('http://localhost:8080/api/auth/login', {
+  fetch('https://steady-hammerhead-fibre.glitch.me/api/auth/login', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

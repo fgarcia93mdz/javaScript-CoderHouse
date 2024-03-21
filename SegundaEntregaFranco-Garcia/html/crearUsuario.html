@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Gestión de Informes de Seguridad</title>
+  <title>Gestión de Informes de Seguridad - Formulario</title>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
@@ -36,36 +36,30 @@
       <button id="logout" class="btn btn-outline-danger ml-3">Cerrar Sesión</button>
     </div>
   </nav>
-
-  <h1>Listado de informes</h1>
-  <div>
-    <button id="borrarStorage">Borrar almacenamiento (storage)</button>
-    <button id="descargarInformes">Descargar Informes (JSON)</button>
-  </div>
-  <div id="contenedor-informes"></div>
-  <div class="modal" tabindex="-1" id="informeModal">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Detalles del Informe</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body" id="informeModalBody">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        </div>
-      </div>
-    </div>
-  </div>
+  <h1>Formulario de creación de usuario </h1>
+  <form id="formInforme">
+    <label for="nombre" class="form-label">Nombre:</label>
+    <input type="text" class="form-control" id="nombre" required>
+    <label for="apellido" class="form-label">Apellido:</label>
+    <input type="text" class="form-control" id="apellido" required>
+    <label for="usuario" class="form-label">Usuario:</label>
+    <input type="text" class="form-control" id="usuario" required>
+    <label for="email" class="form-label">Email:</label>
+    <input type="email" class="form-control" id="email" required>
+    <label for="password" class="form-label">Contraseña:</label>
+    <input type="password" class="form-control" id="password" required>
+    <label for="rol" class="form-label">Rol:</label>
+    <select class="form-select" id="rol" required></select>
+    <button type="submit" class="btn btn-primary">Crear usuario</button>
+  </form>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-
-  <script type="module" src="../js/informes.js"></script>
+  <script type="module" src="../js/usuarios.js"></script>
   <script type="module" src="../js/logOut.js"></script>
+
 
 </body>
 

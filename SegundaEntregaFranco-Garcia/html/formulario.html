@@ -17,7 +17,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="../html/formulario.html">Formulario</a>
+          <a class="nav-link" href="../html/formulario.html">Formulario Informes</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="../html/informes.html">Informes</a>
@@ -28,9 +28,7 @@
         <li class="nav-item">
           <a class="nav-link" href="../html/sectores.html">Sectores</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="../html/involucrados.html">Involucrados</a>
-        </li>
+        
         <li class="nav-item">
           <a class="nav-link" href="../html/usuarios.html">Roles</a>
       </ul>
@@ -38,7 +36,6 @@
       <button id="logout" class="btn btn-outline-danger ml-3">Cerrar Sesión</button>
     </div>
   </nav>
-  
   <h1>Formulario de Informes</h1>
   <form id="formInforme">
     <label for="titulo">Título:</label>
@@ -50,7 +47,7 @@
     <label for="involucrado">Involucrado:</label>
     <select id="involucrado" name="involucrado"></select>
     <label for="autor">Autor:</label>
-    <input type="text" id="autor" name="autor">
+    <input type="text" id="autor" name="autor" readonly>
     <label for="informeContenido">Contenido del informe:</label>
     <textarea id="informeContenido" name="informeContenido"></textarea>
     <input type="submit" value="Agregar informe">
@@ -62,7 +59,8 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 <script type="module" src="../js/formulario.js"></script>
-<script type="module" src="../js/informes.js"></script>
+<script type="module" src="../js/logOut.js"></script>
+
 </body>
 
 </html>
