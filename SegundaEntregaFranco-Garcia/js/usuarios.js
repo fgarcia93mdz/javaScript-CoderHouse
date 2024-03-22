@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 function obtenerUsuarios() {
-  fetch('http://localhost:8080/api/users/curso-js-usuario/usuarios')
+  fetch('https://steady-hammerhead-fibre.glitch.me/api/users/curso-js-usuario/usuarios')
     .then(response => response.json())
     .then(data => {
       const userTable = document.getElementById('userTable');
@@ -80,7 +80,7 @@ function obtenerUsuarios() {
 }
 
 function editarUsuario(id, nuevoNombre, nuevoApellido, nuevoUsuario, nuevoEmail, nuevoRol) {
-  fetch(`http://localhost:8080/api/users/curso-js-usuario/editar/${id}`, {
+  fetch(`https://steady-hammerhead-fibre.glitch.me/api/users/curso-js-usuario/editar/${id}`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
@@ -108,7 +108,7 @@ function editarUsuario(id, nuevoNombre, nuevoApellido, nuevoUsuario, nuevoEmail,
 obtenerUsuarios();
 
 function crearUsuario(nombre, apellido, usuario, email, password, rol) {
-  fetch('http://localhost:8080/api/users/curso-js-usuario/crear', {
+  fetch('https://steady-hammerhead-fibre.glitch.me/api/users/curso-js-usuario/crear', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -129,7 +129,7 @@ function crearUsuario(nombre, apellido, usuario, email, password, rol) {
 }
 
 function obtenerYRenderizarRolesParaEditar() {
-  fetch('http://localhost:8080/api/users/curso-js-rol/roles')
+  fetch('https://steady-hammerhead-fibre.glitch.me/api/users/curso-js-rol/roles')
     .then(response => response.json())
     .then(data => {
       const rolSelector = document.getElementById('editRol');

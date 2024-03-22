@@ -1,5 +1,5 @@
 function obtenerSectores() {
-  fetch('http://localhost:8080/api/sectors/curso-js-sector/sectores')
+  fetch('https://steady-hammerhead-fibre.glitch.me/api/sectors/curso-js-sector/sectores')
     .then(response => response.json())
     .then(data => {
       const sectorTable = document.getElementById('sectorTable').getElementsByTagName('tbody')[0];
@@ -37,7 +37,7 @@ function obtenerSectores() {
 }
 
 function crearSector(sector) {
-  fetch('http://localhost:8080/api/sectors/curso-js-sector/crear', {
+  fetch('https://steady-hammerhead-fibre.glitch.me/api/sectors/curso-js-sector/crear', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -62,7 +62,7 @@ function crearSector(sector) {
 }
 
 function editarSector(id, nuevoNombre) {
-  fetch(`http://localhost:8080/api/sectors/curso-js-sector/editar/${id}`, {
+  fetch(`https://steady-hammerhead-fibre.glitch.me/api/sectors/curso-js-sector/editar/${id}`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',

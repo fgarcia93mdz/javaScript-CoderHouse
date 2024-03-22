@@ -1,5 +1,5 @@
 function obtenerRoles() {
-  fetch('http://localhost:8080/api/users/curso-js-rol/roles')
+  fetch('https://steady-hammerhead-fibre.glitch.me/api/users/curso-js-rol/roles')
     .then(response => response.json())
     .then(data => {
       const rolTableBody = document.querySelector('#rolTable tbody');
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 function crearRol(rol) {
-  fetch('http://localhost:8080/api/users/curso-js-rol/crear', {
+  fetch('https://steady-hammerhead-fibre.glitch.me/api/users/curso-js-rol/crear', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -72,7 +72,7 @@ function crearRol(rol) {
 }
 
 function editarRol(id, nuevoNombre) {
-  fetch(`http://localhost:8080/api/users/curso-js-rol/editar/${id}`, {
+  fetch(`https://steady-hammerhead-fibre.glitch.me/api/users/curso-js-rol/editar/${id}`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',

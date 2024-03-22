@@ -2,7 +2,7 @@ import { UI } from './ui.js';
 import { InformeManager } from './informeManager.js';
 
 async function obtenerSectores() {
-  const response = await fetch('http://localhost:8080/api/sectors/curso-js-sector/sectores');
+  const response = await fetch('https://steady-hammerhead-fibre.glitch.me/api/sectors/curso-js-sector/sectores');
   const data = await response.json();
   return data;
 }

@@ -1,7 +1,10 @@
 body {
   font-family: 'Montserrat', sans-serif;
   padding: 20px;
-  background-image: linear-gradient(to right, #87c7ef, #8bccf5, rgb(189, 222, 243), #c7e5f6, #dfeff7);
+}
+
+#indexBody{
+background-image: linear-gradient(to right, #87c7ef, #8bccf5, rgb(189, 222, 243), #c7e5f6, #dfeff7) !important;
 }
 
 #h1Index {
